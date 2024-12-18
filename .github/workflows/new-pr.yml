@@ -52,7 +52,7 @@ jobs:
         PR_NUMBER: ${{ github.event.pull_request.number }}  # Adjust as needed
         GITHUB_OUTPUT: ${{ github.workspace }}/github_output.txt
         USER: ${{ secrets.USER }} # Ensure these secrets are set in your repository settings
-        PW: ${{ secrets.PW }}
+        PW: ${{ secrets.USER_CRED }}
         URL: https://ctf.catch-the-frog.com
       run: |
         # Script content here
