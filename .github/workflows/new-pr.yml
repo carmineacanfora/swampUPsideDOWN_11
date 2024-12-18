@@ -11,6 +11,11 @@ jobs:
       API_URL: "https://ctf.catch-the-frog.com"
     
     steps:
+    - name: Set up GitHub CLI
+      uses: actions/setup-gh@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
     - name: Checkout code
       uses: actions/checkout@v3
         
