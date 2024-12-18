@@ -11,11 +11,6 @@ jobs:
       API_URL: "https://ctf.catch-the-frog.com"
     
     steps:
-    - name: Set up GitHub CLI
-      uses: actions/setup-gh@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
     - name: Checkout code
       uses: actions/checkout@v3
         
@@ -54,6 +49,7 @@ jobs:
         URL: ${{env.API_URL}}
         USER: ${{ secrets.USER }}
         PW: ${{ secrets.USER_CRED }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         PR="${{ github.event.pull_request.body }}"
         echo $PR | grep -oP '\(backport #\K\d+' | tail -n 1
